@@ -4,22 +4,15 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.chrome.service import Service
 
-# Constants
-CHROMEDRIVER_PATH = "C:\WebDriver\chrome-win64\chrome.exe"
-LOGIN_URL = "https://windsorfairlakesapts.activebuilding.com/login"
-EMAIL = "fcos624@gmail.com"
-PASSWORD = "4GGhLNq.Rdh4a32"
-
-# Set up Chrome options for headless mode (optional)
-# chrome_options = Options()
-# chrome_options.add_argument("--headless")  # Run in headless mode (no UI)
-# chrome_options.add_argument("--disable-gpu")
-# chrome_options.add_argument("--window-size=1920,1080")
+# Import login credentials (Ensure login_info.py exists)
+try:
+    from login_info import LOGIN_URL, EMAIL, PASSWORD
+except ImportError:
+    raise Exception(
+        "Error: 'login_info.py' is missing. Please create it with your credentials.")
 
 
-# Initialize the Chrome webdriver
 def get_driver():
     chrome_options = Options()
     chrome_options.add_argument("--headless")
