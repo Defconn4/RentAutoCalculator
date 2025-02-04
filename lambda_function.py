@@ -74,7 +74,7 @@ def lambda_handler(event, context):
     body_text = "\n".join(lines)
 
     # Email subject with current date
-    current_date = datetime.utcnow().strftime("%Y-%m-%d")
+    current_date = datetime.now().strftime("%Y-%m-%d")
     subject = f"Monthly Rent Calculation Report, {current_date}"
 
     try:
