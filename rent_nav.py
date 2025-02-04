@@ -22,7 +22,7 @@ def get_driver():
 
     # Tell Selenium where the Chromium binary is located.
     chrome_options.binary_location = os.path.join(
-        os.getcwd(), "headless-chromium")
+        os.getcwd(), "chrome-win64", "chrome.exe")
 
     driver = webdriver.Chrome()
     return driver
