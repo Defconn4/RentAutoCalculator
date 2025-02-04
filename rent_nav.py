@@ -4,6 +4,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.chrome.service import Service
 
 # Import login credentials (Ensure login_info.py exists)
 try:
@@ -20,11 +21,11 @@ def get_driver():
     chrome_options.add_argument("--no-sandbox")
     chrome_options.add_argument("--disable-dev-shm-usage")
 
-    # Tell Selenium where the Chromium binary is located.
-    chrome_options.binary_location = os.path.join(
-        os.getcwd(), "chrome-win64", "chrome.exe")
+    # Use the binaries from the Lambda layer (located in /opt/bin)
+    chrome_options.binary_location = "/opt/bin/headless-chromium"
+    service = Service(executable_path="/opt/bin/chromedriver")
+    driver = webdriver.Chrome(service=service, options=chrome_options)
 
-    driver = webdriver.Chrome()
     return driver
 
 
@@ -97,5 +98,5 @@ def lambda_handler(event, context):
         driver.quit()
 
 
-# Get the current balance
-lambda_handler(None, None)
+if __name__ == "__main__":
+    lambda_handler(None, None)
