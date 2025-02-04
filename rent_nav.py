@@ -29,7 +29,7 @@ def get_driver():
     return driver
 
 
-def lambda_handler(event, context):
+def get_rent_amount():
     try:
         driver = get_driver()
         wait = WebDriverWait(driver, 20)
@@ -82,4 +82,4 @@ def lambda_handler(event, context):
 
 
 if __name__ == "__main__":
-    lambda_handler(None, None)
+    get_rent_amount()
