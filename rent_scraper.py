@@ -26,10 +26,13 @@ def get_driver():
     service = Service(executable_path="/opt/bin/chromedriver")
     driver = webdriver.Chrome(service=service, options=chrome_options)
 
+    # If running locally, use the following driver instead:
+    # driver = webdriver.Chrome()
+
     return driver
 
 
-def get_rent_amount():
+def get_latest_rent():
     try:
         driver = get_driver()
         wait = WebDriverWait(driver, 20)
@@ -73,7 +76,10 @@ def get_rent_amount():
             EC.presence_of_element_located((By.XPATH, "//div[@data-testid='balance']//span")))
 
         current_balance = current_balance_element.text
-        print("\n\nCurrent Balance:", current_balance)
+
+        print("\n(5) Found current balance element\n")
+
+        return {"current_balance": float(current_balance.replace('$', '').replace(',', ''))}
 
     except Exception as e:
         print("An error occurred:", str(e))
@@ -82,4 +88,5 @@ def get_rent_amount():
 
 
 if __name__ == "__main__":
-    get_rent_amount()
+    rent_data = get_latest_rent()
+    print(rent_data)
