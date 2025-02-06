@@ -11,7 +11,7 @@ phases:
     commands:
       - cd . # Make sure we are in the root directory.
       - zip -r deployment-package.zip . -x "*__pycache__*" # Create a ZIP file that will be your Lambda deployment package.
-      - ls -alR # For debugging
+      - ls -alR # For debugging (check CodeBuild logs)
 artifacts:
   files:
     - deployment-package.zip
