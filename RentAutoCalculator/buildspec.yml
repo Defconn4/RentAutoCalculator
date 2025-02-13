@@ -9,7 +9,6 @@ phases:
       - pip install -r requirements.txt -t .
   build:
     commands:
-        - cd $CODEBUILD_SRC_DIR/src  # ✅ Move into the correct directory
       - echo "Current directory: $(pwd)" # Print the working directory
       - echo "Listing files before zipping:"
       - ls -al # Debugging: Show all files before packaging
