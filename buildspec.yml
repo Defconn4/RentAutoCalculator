@@ -5,15 +5,20 @@ phases:
     runtime-versions:
       python: 3.10
     commands:
-      # Install dependencies into the current directory
+      # Install dependencies into the correct directory
       - pip install -r requirements.txt -t .
   build:
     commands:
-      - echo "Building deployment package..." # Output a message to the console.
-      - zip -r deployment-package.zip . -x "*__pycache__*" # Create a ZIP file that will be your Lambda deployment package.
-      - ls # List the files in the current directory.
+      - echo "Current directory: $(pwd)" # Print the working directory
+      - echo "Listing files before zipping:"
+      - ls -al # Debugging: Show all files before packaging
+      - echo "Building deployment package..."
+      - zip -r deployment-package.zip . -x "*__pycache__*"
+      - echo "Listing files after zipping:"
+      - ls -al deployment-package.zip # Debugging: Check if the zip was created
+
 artifacts:
   files:
     - deployment-package.zip
   discard-paths: yes
-  base-directory: .
+  base-directory: src # ✅ Fix: Adjust base directory to match CodeBuild SRC directory
