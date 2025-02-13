@@ -15,4 +15,5 @@ phases:
 artifacts:
   files:
     - deployment-package.zip
-  base-directory: /
+  discard-paths: yes
+  base-directory: .
