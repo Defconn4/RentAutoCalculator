@@ -12,7 +12,6 @@ phases:
       - cd . # Make sure we are in the root directory.
       - zip -r deployment-package.zip . -x "*__pycache__*" # Create a ZIP file that will be your Lambda deployment package.
       - ls # List the files in the current directory.
-      - ls -al deployment-package.zip # ✅ Ensure the zip file exists
 artifacts:
   files:
     - deployment-package.zip
