@@ -9,7 +9,6 @@ phases:
       - pip install -r requirements.txt -t .
   build:
     commands:
-      - cd . # Make sure we are in the root directory.
       - echo "Building deployment package..." # Output a message to the console.
       - zip -r deployment-package.zip . -x "*__pycache__*" # Create a ZIP file that will be your Lambda deployment package.
       - ls # List the files in the current directory.
