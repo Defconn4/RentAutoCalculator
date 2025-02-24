@@ -6,16 +6,18 @@
 
 # Replace with your own login credentials (DO NOT COMMIT THIS FILE TO GITHUB)
 
-# CHROMEDRIVER_PATH = "YOUR_PATH_IF_APPLICABLE"
-
-# URL of your property's login page
+# URL of your property's login page:
 LOGIN_URL = "your-login-url"
 
-# Email and password for you rent payment account
+# Email and password for you rent payment account:
 EMAIL = "your-email@example.com"
 PASSWORD = "your-secure-password"
 
-# Add the names of your roommates here
+# Add the names of your roommates here:
 ROOMMATE_1_NAME = "Gamer1"
 ROOMMATE_2_NAME = "Gamer2"
 ROOMMATE_3_NAME = "Gamer3"
+
+# For running locally, fill in the following constants:
+SENDER_EMAIL = "your-secondary-email@example.com"
+RECIPIENT_EMAIL = "your-email@example.com"
