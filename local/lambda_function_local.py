@@ -40,8 +40,9 @@ def is_last_day_of_month():
 
 def lambda_handler(event, context):
     # Only proceed if today is the last day of the month.
-    if not is_last_day_of_month() and IS_LOCAL:
-        print("Today is not the last day of the month. No action taken.")
+    # NOTE: Commented out for local execution.
+    # if not is_last_day_of_month():
+    #     print("Today is not the last day of the month. No action taken.")
 
     # Create an SES client
     ses_client = boto3.client('ses')
