@@ -1,8 +1,11 @@
-# login_info.example.py
-# Copy this file to login_info.py and replace the placeholders with your actual credentials.
-# Alternatively, inside of AWS Lambda, you can set these values as environment variables (easier and more secure).
+# Copy this file to `login_info.py` and replace the placeholders with your credentials if you are running this locally.
+
+# Alternatively, if using inside of AWS Lambda, set these values as environment variables instead.
+# If you're spooked about hardcoding your credentials, you can use AWS Secrets Manager to store them securely
+# and retrieve them at runtime. I have not implemented this in the script, but it is a good practice to follow.
 
 # Replace with your own login credentials (DO NOT COMMIT THIS FILE TO GITHUB)
+
 # CHROMEDRIVER_PATH = "YOUR_PATH_IF_APPLICABLE"
 
 # URL of your property's login page
