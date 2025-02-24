@@ -166,7 +166,7 @@ This project runs as a monthly CRON job on AWS Lambda. Here’s how it works:
 
 1. **Local Script Usage**:
 
-   - [ ] Add a separate directory with files to run this script locally instead of needing
+   - [x] Add a separate directory with files to run this script locally instead of needing
          to rely on AWS, in the case of hitting free monthly usage limits like I currently have due to debugging.
 
 2. **Basic Automation**:
@@ -185,11 +185,7 @@ This project runs as a monthly CRON job on AWS Lambda. Here’s how it works:
 
    - [ ] Integrate AWS Secrets Manager for secure handling of login credentials.
 
-6. **Local Testing Enhancements**:
-
-   - [ ] Add local testing capabilities for the Selenium scraper using Docker or a headless browser setup.
-
-7. **Portfolio Documentation**:
+6. **Portfolio Documentation**:
    - [ ] Expand documentation and add examples to better showcase the project in my personal portfolio.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p> <!-- CONTACT -->
