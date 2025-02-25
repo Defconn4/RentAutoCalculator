@@ -6,13 +6,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.service import Service
 
-# Import login credentials (Ensure login_info.py exists)
-try:
-    from login_info import LOGIN_URL, EMAIL, PASSWORD
-except ImportError:
-    raise Exception(
-        "Error: 'login_info.py' is missing. Please create it with your credentials.")
-
 
 def get_driver():
     chrome_options = Options()
@@ -21,18 +14,21 @@ def get_driver():
     chrome_options.add_argument("--no-sandbox")
     chrome_options.add_argument("--disable-dev-shm-usage")
 
-    # Use the binaries from the Lambda layer (located in /opt/bin)
+    # Use the binaries from the AWS Lambda layer (located in /opt/bin)
     chrome_options.binary_location = "/opt/bin/headless-chromium"
     service = Service(executable_path="/opt/bin/chromedriver")
     driver = webdriver.Chrome(service=service, options=chrome_options)
-
-    # If running locally, use the following driver instead:
-    # driver = webdriver.Chrome()
 
     return driver
 
 
 def get_latest_rent():
+
+    # Retrieve login credentials from AWS Lambda environment variables.
+    LOGIN_URL = os.environ.get('LOGIN_URL')
+    EMAIL = os.environ.get('EMAIL')
+    PASSWORD = os.environ.get('PASSWORD')
+
     try:
         driver = get_driver()
         wait = WebDriverWait(driver, 20)
