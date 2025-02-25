@@ -9,7 +9,7 @@
   <h3 align="center">Automated Monthly Rent Calculator</h3>
 
   <p align="center">
-    A simple AWS-powered service that automates the monthly calculation of rent for my apartment and sends an email report.  
+    A simple AWS-powered service that automates the monthly calculation of rent for my apartment and sends an email report. This script can be run locally or deployed via AWS.
     <br /><br />
     I like to automate things and I had to find an excuse to use my AWS Cloud Practitioner knowledge lol.
   </p>
@@ -73,14 +73,13 @@ I embarked on this project to solve a practical problem in my everyday life. Man
 
 ## Getting Started
 
-This is an example of how you may set up the project locally or deploy it on AWS.
+I will provide configuration steps on how to set up the project for deployment with AWS.
 
 ### Prerequisites
 
 - AWS Account with access to Lambda, CodeBuild, CodePipeline, CodeDeploy, and SES.
 - Python 3.10 installed locally.
 - Git installed.
-- NOTE: I think I can remove these requirements below for downloading these binaries.
 - Download the Chrome Labs Chromium Binary to run Selenium [here](https://googlechromelabs.github.io/chrome-for-testing/#stable).
   - If you don't want to peruse the versions, here is version [1.33.0.6943.53 for Win64](https://storage.googleapis.com/chrome-for-testing-public/133.0.6943.53/win64/chrome-win64.zip).
 - [Selenium WebDriver](https://www.selenium.dev/) and appropriate binaries for headless Chrome (for local testing).
@@ -101,18 +100,7 @@ This is an example of how you may set up the project locally or deploy it on AWS
    pip install -r requirements.txt
    ```
 
-3. **Configure AWS Environment Variables**
-
-- In your AWS Lambda function, set the following environment variables:
-  - `SENDER_EMAIL` – Your verified sender email (I used my personal email for this).
-  - `RECIPIENT_EMAIL` – The recipient email address (I used an alternative business email for this).
-    - Having 2 separate Gmail accounts is FAR easier than trying to make your way out of the Sandbox for `AWS SNS`, which is not worth spending the time on IMO.
-- Alternatively, update `login_info.py` with your credentials and login URL if you plan on running this script locally. This means you are retrieving the rent manually at the end of each month instead of leveraging AWS, which is where I'm at currently as I've hit my free monthly usage limits for AWS CodeBuild and AWS CodePipeline.
-
-4. Prepare for AWS Deployment
-
-- Ensure your buildspec.yml is correctly configured to package the project into a ZIP file, which it already is for this project's purpose.
-- The project is integrated with AWS CodePipeline, CodeBuild, and CodeDeploy for automated deployment.
+3. **Refer to the `deployment.md` file for further instructions on AWS. I did not want to clutter this README with a vast amount of instructions.**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p> <!-- USAGE -->
 
@@ -171,22 +159,22 @@ This project runs as a monthly CRON job on AWS Lambda. Here’s how it works:
 
 2. **Basic Automation**:
 
-   - [ ] Automate monthly rent calculation and email reporting using AWS Lambda, SES, and scheduled CRON jobs.
+   - [ ] Automate monthly rent calculation and email reporting using AWS Lambda, SES, and scheduled CRON jobs. I am currently waiting for my AWS monthly free usage limits to reset for AWS CodeBuild and AWS CodePipeline.
 
 3. **Complete CI/CD Integration**:
 
    - [ ] Fully integrate CodePipeline, CodeBuild, and CodeDeploy to automatically update the Lambda function.
 
-4. **Enhanced Error Handling**:
-
-   - [ ] Improve logging and error notifications for the Selenium scraper.
-
-5. **Secure Credential Management**:
+4. **Secure Credential Management**:
 
    - [ ] Integrate AWS Secrets Manager for secure handling of login credentials.
 
+5. **Enhanced Error Handling**:
+
+   - [ ] Improve logging and error notifications for the Selenium scraper.
+
 6. **Portfolio Documentation**:
-   - [ ] Expand documentation and add examples to better showcase the project in my personal portfolio.
+   - [ ] Expand documentation and add examples to better showcase this project in my personal portfolio.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p> <!-- CONTACT -->
 
