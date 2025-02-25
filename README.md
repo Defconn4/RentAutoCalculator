@@ -126,7 +126,7 @@ This project runs as a monthly CRON job on AWS Lambda. Here’s how it works:
 
 5. **CI/CD Pipeline**:
 
-   - CodePipeline, CodeBuild, and CodeDeploy automatically update the Lambda function whenever code is pushed to GitHub.
+   - CodePipeline and CodeBuild automatically update the Lambda function whenever code is pushed to GitHub.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p> <!-- WHAT I LEARNED -->
 
@@ -134,7 +134,7 @@ This project runs as a monthly CRON job on AWS Lambda. Here’s how it works:
 
 1. **AWS Cloud Services Integration**:
 
-   - I gained hands-on experience with AWS Lambda, CodeBuild, CodePipeline, and CodeDeploy by automating deployments from GitHub.
+   - I gained hands-on experience with AWS Lambda, CodeBuild, CodePipeline, CodeDeploy by automating deployments from GitHub.
 
 2. **Serverless Architecture**:
 
@@ -163,7 +163,7 @@ This project runs as a monthly CRON job on AWS Lambda. Here’s how it works:
 
 3. **Complete CI/CD Integration**:
 
-   - [ ] Fully integrate CodePipeline, CodeBuild, and CodeDeploy to automatically update the Lambda function.
+   - [ ] Fully integrate CodePipeline and CodeBuild to automatically update the Lambda function.
 
 4. **Secure Credential Management**:
 
