@@ -2,7 +2,8 @@
 
 ### Easy Links
 
-[![Stars][stars-shield]][stars-url]
+<!-- [![Stars][stars-shield]][stars-url] -->
+
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 <div align="center">
@@ -191,7 +192,8 @@ This project runs as a monthly CRON job on AWS Lambda. Here’s how it works:
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[stars-shield]: https://img.shields.io/github/stars/Defconn4/RentAutoCalculator
-[stars-url]: https://github.com/Defconn4/RentAutoCalculator
+<!-- [stars-shield]: https://img.shields.io/github/stars/Defconn4/RentAutoCalculator
+[stars-url]: https://github.com/Defconn4/RentAutoCalculator -->
+
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/frank-costantino-a4a61b133/
