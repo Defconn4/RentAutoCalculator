@@ -21,4 +21,4 @@ artifacts:
   files:
     - deployment-package.zip
   discard-paths: yes
-  base-directory: src # ✅ Fix: Adjust base directory to match CodeBuild SRC directory
+  base-directory: src # Adjusted base directory to match CodeBuild SRC directory, not sure if this is working. It's Future me's problem now!
