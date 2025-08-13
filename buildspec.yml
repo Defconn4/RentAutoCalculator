@@ -1,0 +1,24 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.10
+    commands:
+      # Install dependencies into the correct directory
+      - pip install -r requirements.txt -t .
+  build:
+    commands:
+      - echo "Current directory: $(pwd)" # Print the working directory
+      - echo "Listing files before zipping:"
+      - ls -al # Debugging: Show all files before packaging
+      - echo "Building deployment package..."
+      - zip -r deployment-package.zip . -x "*__pycache__*"
+      - echo "Listing files after zipping:"
+      - ls -al deployment-package.zip # Debugging: Check if the zip was created
+
+artifacts:
+  files:
+    - deployment-package.zip
+  discard-paths: yes
+  base-directory: src # Adjusted base directory to match CodeBuild SRC directory, not sure if this is working. It's Future me's problem now!
